@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class BlogController {
     @GetMapping("/admin/blog")
     public String blog(){
-        return "admin/blog";
+        return "blogs";
+    }
+    @GetMapping("/admin/blogsinput")
+    public String bloginput(){
+        return "admin/blogsinput";
     }
 }

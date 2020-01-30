@@ -1,0 +1,5 @@
+2020-01-30 18:57:09.880  INFO 1596 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Starting BlogApplication on zhanggangdeMBP.lan with PID 1596 (/Users/zhanggang/newblog/target/classes started by zhanggang in /Users/zhanggang/newblog)
+2020-01-30 18:57:09.881 DEBUG 1596 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-01-30 18:57:09.881  INFO 1596 --- [restartedMain] com.zhanggang.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-01-30 18:57:10.627  WARN 1596 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-30 18:57:10.978  INFO 1596 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Started BlogApplication in 1.202 seconds (JVM running for 7140.124)

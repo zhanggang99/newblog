@@ -715,12 +715,14 @@ h5,h6{font-size:1em;}
         var waypoint = new Waypoint({
             element: document.getElementById('waypoint'),
             handler: function(direction) {
-                if (direction=="down"){
-                    $('toolbar').show(500);
+                if (direction == "down"){
+                    // console.log(direction);
+                    $('#toolbar').show(500);
                 }else{
-                    $('toolbar').hide(500);
+                    // console.log(direction);
+                    $('#toolbar').hide(500);
                 }
-                alert('You have scrolled to a thing')
+                // alert('You have scrolled to a thing')
             }
         })
     </script>

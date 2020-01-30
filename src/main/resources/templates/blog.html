@@ -7,6 +7,9 @@
     <title>博客 </title>
     <link href="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/typo.css">
+    <link rel="stylesheet" href="./css/animate.css">
+    <link rel="stylesheet" href="/lib/prism/prism.css">
+    <link rel="stylesheet" href="/lib/tocbot/tocbot.css">
     <link rel="stylesheet" href="./css/me.css">
 </head>
 <body>
@@ -31,7 +34,7 @@
         <a href="" class="ui menu toggle black icon m-right-top button m-mobile-show "><i class="sidebar icon"></i></a>
     </nav>
     <!--content-->
-    <div class="m-container m-padded-tb-large">
+    <div id="waypoint" class="m-container m-padded-tb-large animated fadeIn">
        <div class="ui container">
            <div class="ui top attached segment">
             <div class="ui horizontal link list">
@@ -50,16 +53,17 @@
            <div class="ui attached segment">
                <img src="https://i.picsum.photos/id/87/100/100.jpg" width="100%" height="200px" alt="" class="ui rounded image">
            </div>
-           <div class="ui attached padded  segment">
+           <div class="ui attached padded segment">
                <div class="ui right aligned basic segment"><div class="ui orange basic label">原创</div></div>
                <div class="ui center aligned header">关于刻意练习的清单</div>
-               <div id="content" class="typo typo-selection m-padded-lr-responsive m-padded-tb-large">
+               <div id="content" class="typo typo-selection js-toc-content m-padded-lr-responsive m-padded-tb-large">
                    <h1>中文网页重设与排版：<i class="serif">Typo.css</i></h1><br/>
 
                    <h2 id="tagline" class="serif">一致化浏览器排版效果，构建最适合中文阅读的网页排版</h2>
 
                    <ol id="table">
                        <li><a href="#section1">关于 <i class="serif">Typo.css</i></a></li>
+                       <pre><code class="language-css">p { color:red }</code></pre>
                        <li><a href="#section2">排版实例</a>
                            <ul>
                                <li><a href="#section2-1">例1：论语学而篇第一</a></li>
@@ -83,7 +87,7 @@
                        Yahoo、Eric Meyer 和 Alice base.css 中采用的 Reset 都没有很好地考虑中文排版。<i class="serif">Typo.css</i> 要做的就是解决中文排版的问题。</p>
 
                    <p><strong><i class="serif">Typo.css</i> 测试于如下平台：</strong></p>
-                   <table summary="Typo.css 的测试平台列表">
+                   <table ui table summary="Typo.css 的测试平台列表">
                        <thead>
                        <tr>
                            <th>OS/浏览器</th>
@@ -258,8 +262,7 @@
                        You just need to follow the browser's behavior, and set a right <code>margin</code> to it。it will works nice as the
                        demo you're watching now. The following code is the best way to render typo in Chinese:
                    </p>
-                   <pre>
-/* 标题应该更贴紧内容，并与其他块区分，margin 值要相应做优化 */
+                   <pre>/* 标题应该更贴紧内容，并与其他块区分，margin 值要相应做优化 */
 h1,h2,h3,h4,h5,h6 {
     line-height:1;font-family:Arial,sans-serif;margin:1.4em 0 0.8em;
 }
@@ -431,7 +434,6 @@ h5,h6{font-size:1em;}
 
                    <p><i class="serif">Typo.css</i> 基于 <a href="http://zh.wikipedia.org/wiki/MIT_License">MIT License</a> 开源，使用代码只需说明来源，或者引用 <a
                            href="http://typo.sofi.sh/license.txt">license.txt</a> 即可。</p>
-               </div>
                <!-- #wrapper -->
                <a href="https://github.com/sofish/Typo.css" id="fork">
                    <img alt="Fork me on GitHub" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
@@ -502,7 +504,7 @@ h5,h6{font-size:1em;}
                    <div class="five wide column"><img src="./images/weichat.png" class="ui right floated rounded bordered image" style="width: 120px;"></img></div>
                </div>
            </div>
-           <div class="ui bottom  attached segment">
+           <div id="comment-container" class="ui bottom  attached segment">
                <div class="ui teal segment">
                 <div class="ui comments">
                     <h3 class="ui dividing header">Comments</h3>
@@ -592,6 +594,22 @@ h5,h6{font-size:1em;}
            </div>
        </div>
     </div>
+    <div id="toolbar" class="m-padded m-fixed m-right-bottom" style="display: none">
+        <div class="ui vertical icon buttons">
+            <button class="ui teal toc button">目录</button>
+            <a href="#comment-container" class="ui teal button">留言</a>
+            <button class="ui wechat icon button"><i class="weixin icon"></i></button>
+<!--            <a href="#" class="ui icon button"><i class="chevron up icon"></i></a>-->
+            <div id="toTop-button" class="ui icon button"><i class="chevron up icon"></i></div>
+        </div>
+    </div>
+    <div class="ui toc-Container flowing popup transition hidden" style="width: 250px !important;">
+        <ol class="js-toc">
+        </ol>
+    </div>
+    <div id="qrcode" class="ui wechat-qr flowing popup transition hidden" style="overflow: hidden;border: 1px;">
+<!--        <img src="./images/weichat.png" alt="" class="ui rounded image" style="width: 120px;">-->
+    </div>
     <!--footer-->
     <footer class="ui inverted vertical segment m-padded-tb-massive">
         <div class="ui center aligned container">
@@ -629,6 +647,11 @@ h5,h6{font-size:1em;}
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="/lib/prism/prism.js"></script>
+    <script src="/lib/tocbot/tocbot.min.js"></script>
+    <script src="/lib/qrcode/qrcode.min.js"></script>
+    <script src="/lib/scrollto/jquery.scrollTo.min.js"></script>
+    <script src="/lib/waypoints/jquery.waypoints.js"></script>
     <script>
         $('.menu.toggle').click(function(){
             $('.m-item').toggleClass('m-mobile-hide'); 
@@ -638,6 +661,68 @@ h5,h6{font-size:1em;}
             on : 'click',
             position : 'bottom center'
         });
+
+
+        var resizePopup = function(){$('.ui.popup').css('max-height', $(window).height());};
+
+        $(window).resize(function(e){
+            resizePopup();
+        });
+
+
+        tocbot.init({
+            // Where to render the table of contents.
+            tocSelector: '.js-toc',
+            // Where to grab the headings to build the table of contents.
+            contentSelector: '.js-toc-content',
+            // Which headings to grab inside of the contentSelector element.
+            headingSelector: 'h1, h2, h3',
+            // For headings inside relative or absolute positioned containers within content.
+            hasInnerContainers: true,
+        });
+
+        // $('.toc.button').popup({
+        //     popup : $('.toc-Container.popup'),
+        //     on : 'click',
+        //     position : 'left center'
+        // });
+        $('.toc.button')
+            .popup({
+                on: 'click',
+                popup : $('.toc-Container.popup'),
+                //lastResort: 'bottom right',
+                lastResort: 'left center',
+                onShow: function(){
+                    resizePopup();
+                },
+            });
+
+        $('.wechat').popup({
+            popup : $('.wechat-qr'),
+            position : 'left center'
+        });
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            text: "http://jindo.dev.naver.com/collie",
+            width: 110,
+            height: 110,
+            colorDark : "#000000",
+            colorLight : "#ffffff",
+            correctLevel : QRCode.CorrectLevel.H
+        });
+        $('#toTop-button').click(function () {
+            $(window).scrollTo(0,500);
+        });
+        var waypoint = new Waypoint({
+            element: document.getElementById('waypoint'),
+            handler: function(direction) {
+                if (direction=="down"){
+                    $('toolbar').show(500);
+                }else{
+                    $('toolbar').hide(500);
+                }
+                alert('You have scrolled to a thing')
+            }
+        })
     </script>
 </body>
 </html>

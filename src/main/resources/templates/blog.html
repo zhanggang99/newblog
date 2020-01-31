@@ -501,7 +501,7 @@ h5,h6{font-size:1em;}
                            <li>公从号转载：请添加作者公众号维码</li>
                        </ui>
                    </div>
-                   <div class="five wide column"><img src="./images/weichat.png" class="ui right floated rounded bordered image" style="width: 120px;"></img></div>
+                   <div class="five wide column"><img src="./images/weichat.png" th:src="@{/images/weichat.png}" class="ui right floated rounded bordered image" style="width: 120px;"></img></div>
                </div>
            </div>
            <div id="comment-container" class="ui bottom  attached segment">
@@ -611,13 +611,13 @@ h5,h6{font-size:1em;}
 <!--        <img src="./images/weichat.png" alt="" class="ui rounded image" style="width: 120px;">-->
     </div>
     <!--footer-->
-    <footer class="ui inverted vertical segment m-padded-tb-massive">
+    <footer th:replace="_fragments :: footer" class="ui inverted vertical segment m-padded-tb-massive">
         <div class="ui center aligned container">
             <div class="ui divided inverted stackable grid">
                 <div class="three wide column">
                     <div class="ui inverted link list">
                         <div class="item">
-                            <img src="./images/weichat.png" alt="" class="ui rounded image" style="width: 100ox;">
+                            <img src="./images/weichat.png" th:src="@{/images/weichat.png}" alt="" class="ui rounded image" style="width: 100ox;">
                         </div>
                     </div>
                 </div>
@@ -645,6 +645,7 @@ h5,h6{font-size:1em;}
             <p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright@2020 zhangang blog</p>    
         </div>
     </footer>
+<!--/*/ <th:block th:replace="_fragments :: script">/*/-->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.js"></script>
     <script src="/lib/prism/prism.js"></script>
@@ -652,6 +653,8 @@ h5,h6{font-size:1em;}
     <script src="/lib/qrcode/qrcode.min.js"></script>
     <script src="/lib/scrollto/jquery.scrollTo.min.js"></script>
     <script src="/lib/waypoints/jquery.waypoints.js"></script>
+<!--/*/</th:block>/*/-->
+
     <script>
         $('.menu.toggle').click(function(){
             $('.m-item').toggleClass('m-mobile-hide'); 

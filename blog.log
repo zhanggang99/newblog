@@ -2997,3 +2997,144 @@ Caused by: org.hibernate.MappingException: Could not determine type for: com.zha
 2020-01-31 21:06:51.441  INFO 5187 --- [restartedMain] com.zhanggang.blog.BlogApplication       : No active profile set, falling back to default profiles: default
 2020-01-31 21:06:52.926  WARN 5187 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2020-01-31 21:06:53.504  INFO 5187 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Started BlogApplication in 2.11 seconds (JVM running for 314.721)
+2020-01-31 21:19:01.037  INFO 5187 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Starting BlogApplication on zhanggangdeMBP.lan with PID 5187 (/Users/zhanggang/newblog/target/classes started by zhanggang in /Users/zhanggang/newblog)
+2020-01-31 21:19:01.037 DEBUG 5187 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-01-31 21:19:01.038  INFO 5187 --- [restartedMain] com.zhanggang.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-01-31 21:19:02.694  WARN 5187 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-31 21:19:03.229  INFO 5187 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Started BlogApplication in 2.241 seconds (JVM running for 1044.418)
+2020-01-31 21:19:09.970  INFO 5187 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Starting BlogApplication on zhanggangdeMBP.lan with PID 5187 (/Users/zhanggang/newblog/target/classes started by zhanggang in /Users/zhanggang/newblog)
+2020-01-31 21:19:09.971 DEBUG 5187 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-01-31 21:19:09.971  INFO 5187 --- [restartedMain] com.zhanggang.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-01-31 21:19:10.867  WARN 5187 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-31 21:19:11.460  INFO 5187 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Started BlogApplication in 1.528 seconds (JVM running for 1052.649)
+2020-01-31 21:19:15.097  INFO 5341 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Starting BlogApplication on zhanggangdeMBP.lan with PID 5341 (/Users/zhanggang/newblog/target/classes started by zhanggang in /Users/zhanggang/newblog)
+2020-01-31 21:19:15.105 DEBUG 5341 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-01-31 21:19:15.108  INFO 5341 --- [restartedMain] com.zhanggang.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-01-31 21:19:21.011  WARN 5341 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-31 21:19:21.791  INFO 5341 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Started BlogApplication in 7.269 seconds (JVM running for 9.238)
+2020-01-31 21:19:22.191 ERROR 5341 --- [http-nio-8080-exec-1] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-1] Exception processing template "blogs": Error resolving template [blogs], template might not exist or might not be accessible by any of the configured Template Resolvers
+
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template [blogs], template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+2020-01-31 21:19:22.198 ERROR 5341 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Error resolving template [blogs], template might not exist or might not be accessible by any of the configured Template Resolvers] with root cause
+
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template [blogs], template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+2020-01-31 21:19:39.782  INFO 5341 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Starting BlogApplication on zhanggangdeMBP.lan with PID 5341 (/Users/zhanggang/newblog/target/classes started by zhanggang in /Users/zhanggang/newblog)
+2020-01-31 21:19:39.783 DEBUG 5341 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-01-31 21:19:39.784  INFO 5341 --- [restartedMain] com.zhanggang.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-01-31 21:19:41.330  WARN 5341 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-31 21:19:42.059  INFO 5341 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Started BlogApplication in 2.33 seconds (JVM running for 29.506)
+2020-01-31 22:10:16.249  WARN 5341 --- [HikariPool-2 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=36m5s375ms).
+2020-01-31 22:37:31.659  WARN 5341 --- [HikariPool-2 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=27m15s410ms).
+2020-01-31 22:40:33.359  INFO 5341 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Starting BlogApplication on zhanggangdeMBP.lan with PID 5341 (/Users/zhanggang/newblog/target/classes started by zhanggang in /Users/zhanggang/newblog)
+2020-01-31 22:40:33.360 DEBUG 5341 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-01-31 22:40:33.361  INFO 5341 --- [restartedMain] com.zhanggang.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-01-31 22:40:34.913  WARN 5341 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-31 22:40:35.595  INFO 5341 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Started BlogApplication in 2.286 seconds (JVM running for 1130.233)
+2020-01-31 22:40:51.581  INFO 5341 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Starting BlogApplication on zhanggangdeMBP.lan with PID 5341 (/Users/zhanggang/newblog/target/classes started by zhanggang in /Users/zhanggang/newblog)
+2020-01-31 22:40:51.582 DEBUG 5341 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-01-31 22:40:51.582  INFO 5341 --- [restartedMain] com.zhanggang.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-01-31 22:40:52.669  WARN 5341 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-31 22:40:53.032  INFO 5341 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Started BlogApplication in 1.492 seconds (JVM running for 1147.669)
+2020-01-31 22:40:57.767  INFO 5341 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Starting BlogApplication on zhanggangdeMBP.lan with PID 5341 (/Users/zhanggang/newblog/target/classes started by zhanggang in /Users/zhanggang/newblog)
+2020-01-31 22:40:57.769 DEBUG 5341 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-01-31 22:40:57.769  INFO 5341 --- [restartedMain] com.zhanggang.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-01-31 22:40:58.841  WARN 5341 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-31 22:40:59.519  INFO 5341 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Started BlogApplication in 1.803 seconds (JVM running for 1154.156)

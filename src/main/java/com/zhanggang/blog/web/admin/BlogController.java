@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class BlogController {
-    @GetMapping("/admin/blog")
+    @GetMapping("/admin/index")
     public String blog(){
-        return "blogs";
+        return "/admin/index";
     }
     @GetMapping("/admin/blogsinput")
     public String bloginput(){
@@ -18,4 +18,5 @@ public class BlogController {
     public String login(){
         return "/admin/login";
     }
+
 }

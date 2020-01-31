@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width= device-width, initial-scale=1.0">
@@ -10,7 +10,7 @@
 </head>
 <body>
     <!--header-->
-    <nav class="ui inverted attached segment m-padd-tb-mini m-shadow-small">
+    <nav th:replace="_fragments :: menu(3)" class="ui inverted attached segment m-padd-tb-mini m-shadow-small">
         <div class="ui container">
             <div class="ui inverted secondary stackable menu">
                 <h2 class="ui teal header item">Blog</h2>

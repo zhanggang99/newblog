@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="${_fragments :: head(~{::title})}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width= device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>首页 </title>
+    <title>博客</title>
     <link href="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/me.css">
+    <link rel="stylesheet" href="./css/me.css" >
 </head>
 <body>
     <!--header-->
-    <nav class="ui inverted attached segment m-padd-tb-mini m-shadow-small">
+    <nav th:replace="_fragments :: menu(1)" class="ui inverted attached segment m-padd-tb-mini m-shadow-small">
         <div class="ui container">
             <div class="ui inverted secondary stackable menu">
                 <h2 class="ui teal header item">Blog</h2>
@@ -203,7 +203,7 @@
                     <!--二维码-->
                     <h4 class="ui horizontal divider header m-margin-tb-big">扫码关注我</h4>
                     <div class="ui centered card" style="width: 11em;">
-                        <img src="./images/weichat.png" alt="" class="ui rounded image">
+                        <img src="./images/weichat.png" th:src="@{/images/weichat.png}" alt="" class="ui rounded image">
                     </div>
                 </div>
             </div>
@@ -217,7 +217,7 @@
                 <div class="three wide column">
                     <div class="ui inverted link list">
                         <div class="item">
-                            <img src="./images/weichat.png" alt="" class="ui rounded image" style="width: 100ox;">
+                            <img src="./images/weichat.png" th:src="@{/images/weichat.png}" alt="" class="ui rounded image" style="width: 100ox;">
                         </div>
                     </div>
                 </div>

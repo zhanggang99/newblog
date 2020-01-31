@@ -13,4 +13,9 @@ public class BlogController {
     public String bloginput(){
         return "admin/blogsinput";
     }
+
+    @GetMapping("/admin/login")
+    public String login(){
+        return "/admin/login";
+    }
 }

@@ -1,0 +1,235 @@
+2020-01-30 18:57:22.740  INFO 1596 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Starting BlogApplication on zhanggangdeMBP.lan with PID 1596 (/Users/zhanggang/newblog/target/classes started by zhanggang in /Users/zhanggang/newblog)
+2020-01-30 18:57:22.741 DEBUG 1596 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-01-30 18:57:22.741  INFO 1596 --- [restartedMain] com.zhanggang.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-01-30 18:57:23.200  WARN 1596 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-30 18:57:23.425  INFO 1596 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Started BlogApplication in 0.706 seconds (JVM running for 7152.571)
+2020-01-30 19:05:41.597  INFO 1596 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Starting BlogApplication on zhanggangdeMBP.lan with PID 1596 (/Users/zhanggang/newblog/target/classes started by zhanggang in /Users/zhanggang/newblog)
+2020-01-30 19:05:41.597 DEBUG 1596 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-01-30 19:05:41.598  INFO 1596 --- [restartedMain] com.zhanggang.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-01-30 19:05:42.301  WARN 1596 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-30 19:05:42.751  INFO 1596 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Started BlogApplication in 1.308 seconds (JVM running for 7651.881)
+2020-01-30 19:11:43.255  INFO 1898 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Starting BlogApplication on zhanggangdeMBP.lan with PID 1898 (/Users/zhanggang/newblog/target/classes started by zhanggang in /Users/zhanggang/newblog)
+2020-01-30 19:11:43.259 DEBUG 1898 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-01-30 19:11:43.260  INFO 1898 --- [restartedMain] com.zhanggang.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-01-30 19:11:47.226  WARN 1898 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-30 19:11:48.166  INFO 1898 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Started BlogApplication in 5.508 seconds (JVM running for 6.797)
+2020-01-30 19:20:59.251  INFO 1898 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Starting BlogApplication on zhanggangdeMBP.lan with PID 1898 (/Users/zhanggang/newblog/target/classes started by zhanggang in /Users/zhanggang/newblog)
+2020-01-30 19:20:59.251 DEBUG 1898 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-01-30 19:20:59.252  INFO 1898 --- [restartedMain] com.zhanggang.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-01-30 19:20:59.811  WARN 1898 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-30 19:21:00.169  INFO 1898 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Started BlogApplication in 0.967 seconds (JVM running for 558.784)
+2020-01-30 19:21:58.365  INFO 1973 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Starting BlogApplication on zhanggangdeMBP.lan with PID 1973 (/Users/zhanggang/newblog/target/classes started by zhanggang in /Users/zhanggang/newblog)
+2020-01-30 19:21:58.373 DEBUG 1973 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-01-30 19:21:58.375  INFO 1973 --- [restartedMain] com.zhanggang.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-01-30 19:22:03.326  WARN 1973 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-30 19:22:03.818  INFO 1973 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Started BlogApplication in 6.199 seconds (JVM running for 8.088)
+2020-01-30 19:22:04.572 ERROR 1973 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.ArithmeticException: / by zero] with root cause
+
+java.lang.ArithmeticException: / by zero
+	at com.zhanggang.blog.web.indexController.blog(indexController.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+2020-01-30 19:26:21.034  INFO 1973 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Starting BlogApplication on zhanggangdeMBP.lan with PID 1973 (/Users/zhanggang/newblog/target/classes started by zhanggang in /Users/zhanggang/newblog)
+2020-01-30 19:26:21.035 DEBUG 1973 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-01-30 19:26:21.036  INFO 1973 --- [restartedMain] com.zhanggang.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-01-30 19:26:21.703  WARN 1973 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-30 19:26:21.960  INFO 1973 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Started BlogApplication in 0.989 seconds (JVM running for 266.219)
+2020-01-30 19:29:17.042  INFO 1973 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Starting BlogApplication on zhanggangdeMBP.lan with PID 1973 (/Users/zhanggang/newblog/target/classes started by zhanggang in /Users/zhanggang/newblog)
+2020-01-30 19:29:17.043 DEBUG 1973 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-01-30 19:29:17.045  INFO 1973 --- [restartedMain] com.zhanggang.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-01-30 19:29:17.933  WARN 1973 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-30 19:29:18.500  INFO 1973 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Started BlogApplication in 1.503 seconds (JVM running for 442.752)
+2020-01-30 20:09:30.342  INFO 2214 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Starting BlogApplication on zhanggangdeMBP.lan with PID 2214 (/Users/zhanggang/newblog/target/classes started by zhanggang in /Users/zhanggang/newblog)
+2020-01-30 20:09:30.346 DEBUG 2214 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-01-30 20:09:30.352  INFO 2214 --- [restartedMain] com.zhanggang.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-01-30 20:09:34.319  WARN 2214 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-30 20:09:34.752  INFO 2214 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Started BlogApplication in 5.107 seconds (JVM running for 6.519)
+2020-01-30 20:09:46.347 ERROR 2214 --- [http-nio-8080-exec-2] c.z.b.h.ControllerExceptionHandler       : exception url : http://localhost:8080/blog, exception : {}
+
+java.lang.ArithmeticException: / by zero
+	at com.zhanggang.blog.web.indexController.blog(indexController.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+2020-01-30 20:09:46.351  WARN 2214 --- [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.ArithmeticException: / by zero]
+2020-01-30 20:09:47.487 ERROR 2214 --- [http-nio-8080-exec-3] c.z.b.h.ControllerExceptionHandler       : exception url : http://localhost:8080/blog, exception : {}
+
+java.lang.ArithmeticException: / by zero
+	at com.zhanggang.blog.web.indexController.blog(indexController.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:888)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1598)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+2020-01-30 20:09:47.488  WARN 2214 --- [http-nio-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.ArithmeticException: / by zero]
+2020-01-30 20:21:09.693  WARN 2214 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m5s233ms).
+2020-01-30 21:41:18.333  INFO 2214 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Starting BlogApplication on zhanggangdeMBP.lan with PID 2214 (/Users/zhanggang/newblog/target/classes started by zhanggang in /Users/zhanggang/newblog)
+2020-01-30 21:41:18.333 DEBUG 2214 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-01-30 21:41:18.334  INFO 2214 --- [restartedMain] com.zhanggang.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-01-30 21:41:18.873  WARN 2214 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-30 21:41:19.186  INFO 2214 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Started BlogApplication in 0.9 seconds (JVM running for 5415.182)
+2020-01-30 22:03:30.787  WARN 2214 --- [HikariPool-2 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=4m41s709ms).
+2020-01-30 22:52:32.925  INFO 2214 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Starting BlogApplication on zhanggangdeMBP.lan with PID 2214 (/Users/zhanggang/newblog/target/classes started by zhanggang in /Users/zhanggang/newblog)
+2020-01-30 22:52:32.926 DEBUG 2214 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-01-30 22:52:32.926  INFO 2214 --- [restartedMain] com.zhanggang.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-01-30 22:52:33.641  WARN 2214 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-30 22:52:34.355  INFO 2214 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Started BlogApplication in 1.479 seconds (JVM running for 9438.218)
+2020-01-30 22:53:13.014  INFO 2214 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Starting BlogApplication on zhanggangdeMBP.lan with PID 2214 (/Users/zhanggang/newblog/target/classes started by zhanggang in /Users/zhanggang/newblog)
+2020-01-30 22:53:13.015 DEBUG 2214 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-01-30 22:53:13.015  INFO 2214 --- [restartedMain] com.zhanggang.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-01-30 22:53:13.511  WARN 2214 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-30 22:53:13.865  INFO 2214 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Started BlogApplication in 0.897 seconds (JVM running for 9477.715)
+2020-01-30 22:53:23.681  INFO 2214 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Starting BlogApplication on zhanggangdeMBP.lan with PID 2214 (/Users/zhanggang/newblog/target/classes started by zhanggang in /Users/zhanggang/newblog)
+2020-01-30 22:53:23.681 DEBUG 2214 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-01-30 22:53:23.681  INFO 2214 --- [restartedMain] com.zhanggang.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-01-30 22:53:24.300  WARN 2214 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-30 22:53:24.491  INFO 2214 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Started BlogApplication in 0.857 seconds (JVM running for 9488.34)
+2020-01-30 22:53:44.070  INFO 2214 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Starting BlogApplication on zhanggangdeMBP.lan with PID 2214 (/Users/zhanggang/newblog/target/classes started by zhanggang in /Users/zhanggang/newblog)
+2020-01-30 22:53:44.071 DEBUG 2214 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Running with Spring Boot v2.2.4.RELEASE, Spring v5.2.3.RELEASE
+2020-01-30 22:53:44.071  INFO 2214 --- [restartedMain] com.zhanggang.blog.BlogApplication       : No active profile set, falling back to default profiles: default
+2020-01-30 22:53:44.516  WARN 2214 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-30 22:53:44.774  INFO 2214 --- [restartedMain] com.zhanggang.blog.BlogApplication       : Started BlogApplication in 0.792 seconds (JVM running for 9508.622)
+2020-01-30 23:33:41.540  WARN 2214 --- [HikariPool-6 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Thread starvation or clock leap detected (housekeeper delta=28m51s517ms).

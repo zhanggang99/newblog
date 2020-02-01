@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class BlogController {
     @GetMapping("/admin/index")
     public String blog(){
-        return "/admin/index";
+        return "blogs";
     }
     @GetMapping("/admin/blogsinput")
     public String bloginput(){

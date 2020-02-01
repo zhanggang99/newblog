@@ -1,23 +1,26 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head th:replace="admin/_fragments :: head(~{::title})">
+<head th:fragment="head(title)">
     <meta charset="UTF-8">
     <meta name="viewport" content="width= device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>博客</title>
+    <title th:replace="${title}">博客 </title>
     <link href="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../lib/editormd/css/editormd.min.css">
-    <link rel="stylesheet" href="../css/me.css">
+    <link rel="stylesheet" href="./css/typo.css" th:href="@{/css/typo.css}">
+    <link rel="stylesheet" href="./css/animate.css" th:href="@{/css/animate.css}">
+    <link rel="stylesheet" href="/lib/prism/prism.css" th:href="@{/lib/prism/prism.css}">
+    <link rel="stylesheet" href="/lib/tocbot/tocbot.css" th:href="@{/lib/tocbot/tocbot.css}">
+    <link rel="stylesheet" href="./css/me.css" th:href="@{/css/me.css}">
 </head>
 <body>
 <!--header-->
-<nav th:replace="admin/_fragments :: menu(0)" class="ui inverted attached segment m-padd-tb-mini m-shadow-small">
+<nav th:fragment="menu(n)" class="ui inverted attached segment m-padd-tb-mini m-shadow-small">
     <div class="ui container">
         <div class="ui inverted secondary stackable menu">
             <h2 class="ui teal header item">博客管理</h2>
-            <a href="#" class="active m-item item m-mobile-hide"><i class="mini home icon"></i>博客</a>
-            <a href="#" class="m-item item m-mobile-hide"><i class="mini idea icon"></i>分类</a>
-            <a href="#" class="m-item item m-mobile-hide"><i class="mini tags icon"></i>标签</a>
+            <a href="#" class="m-item item m-mobile-hide" th:classappend="${n==1} ? 'active'"><i class="mini home icon"></i>博客</a>
+            <a href="#" class="m-item item m-mobile-hide" th:classappend="${n==2} ? 'active'"><i class="mini idea icon"></i>分类</a>
+            <a href="#" class="m-item item m-mobile-hide" th:classappend="${n==3} ? 'active'"><i class="mini tags icon"></i>标签</a>
             <div class="right m-item m-mobile-hide menu">
                 <div class="ui dropdown item">
                     <div class="text">
@@ -33,32 +36,16 @@
     </div>
     <a href="" class="ui menu toggle black icon m-right-top button m-mobile-show "><i class="sidebar icon"></i></a>
 </nav>
-<div class="ui attached pointing menu">
-    <div class="ui container">
-        <div class="right menu">
-            <a href="#" class="item">发布</a>
-            <a href="#" class="active teal item">列表</a>
-        </div>
-    </div>
-</div>
-<!--content-->
-<div class="m-container m-padded-tb-large">
-    <div class="ui container">
-        <div class="ui success large message">
-            <h3>Hi，</h3>
-            <p>欢迎您，张刚</p>
-        </div>
-        <img src="../images/weichat.png" style="width: 100%;height: 150px;" alt="" class="ui rounded bordered fluid image">
-    </div>
-</div>
+
+
 <!--footer-->
-<footer th:replace="admin/_fragments :: footer" class="ui inverted vertical segment m-padded-tb-massive">
+<footer th:fragment="footer" class="ui inverted vertical segment m-padded-tb-massive">
     <div class="ui center aligned container">
         <div class="ui divided inverted stackable grid">
             <div class="three wide column">
                 <div class="ui inverted link list">
                     <div class="item">
-                        <img src="../images/weichat.png" alt="" class="ui rounded image" style="width: 100ox;">
+                        <img src="./images/weichat.png" alt="" class="ui rounded image" style="width: 100ox;">
                     </div>
                 </div>
             </div>
@@ -86,17 +73,15 @@
         <p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright@2020 zhangang blog</p>
     </div>
 </footer>
-<!--/*/ <th:block th:replace="_fragments :: script">/*/-->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
-<script src="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.js"></script>
-<!--/*/</th:block>/*/-->
-<script>
-    $('.menu.toggle').click(function(){
-        $('.m-item').toggleClass('m-mobile-hide');
-    });
-    $('.ui.dropdown').dropdown({
-        on : 'hover'
-    });
-</script>
+<th:block th:fragment="script">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="/lib/prism/prism.js" th:src="@{/lib/prism/prism.js}"></script>
+    <script src="/lib/tocbot/tocbot.min.js" th:src="@{/lib/tocbot/tocbot.min.js}"></script>
+    <script src="/lib/qrcode/qrcode.min.js" th:src="@{/lib/qrcode/qrcode.min.js}"></script>
+    <script src="/lib/scrollto/jquery.scrollTo.min.js" th:src="@{/lib/scrollto/jquery.scrollTo.min.js}"></script>
+    <script src="/lib/waypoints/jquery.waypoints.js" th:src="@{/lib/waypoints/jquery.waypoints.js}"></script>
+</th:block>
+
 </body>
 </html>

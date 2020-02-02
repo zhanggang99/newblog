@@ -8,11 +8,13 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -28,12 +30,21 @@ public class TypeController {
     }
 
     @GetMapping("/types/input")
-    public String input(){
+    public String input(Model model)
+    {
+        model.addAttribute("type",new Type());
         return "/admin/typeinput";
     }
 
     @PostMapping("types")
-    public String types(Type type, RedirectAttributes redirectAttributes){
+    public String types(@Valid Type type, BindingResult bindingResult, RedirectAttributes redirectAttributes){
+        Type tt = typeService.getTypeByName(type.getName());
+        if (tt != null){
+            bindingResult.rejectValue("name","nameError","不能添加重复的分类！");
+        }
+        if (bindingResult.hasErrors()){
+            return "admin/typeinput";
+        }
         Type t = typeService.saveType(type);
         if (t == null){
             redirectAttributes.addFlashAttribute("message","操作失败！");

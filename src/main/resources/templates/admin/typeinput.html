@@ -43,18 +43,27 @@
     <!--content-->
     <div class="m-container m-padded-tb-large">
        <div class="ui container">
-           <form action="#" method="post" th:action="@{/admin/types}" class="ui form">
+           <form action="#" method="post" th:action="@{/admin/types}" class="ui form" th:object="${type}">
                <div class="field">
-                   <div class="ui left labeld input">
+<!--                   <div class="required field">-->
+
+                   <div class="ui left labeled input">
                        <label class="ui teal basic label">名称</label>
-                       <input type="text" name="name" class="text" placeholder="分类名称">
+                       <input type="text" name="name" class="text" placeholder="分类名称" th:value="*{name}">
                    </div>
                </div>
+               <!--/*/
+               <div class="ui error message"></div>
+               <div class="ui negative message" th:if="${#fields.hasErrors('name')}">
+                   <i class="close icon"></i>
+                   <div class="header">验证失败</div>
+                   <p th:errors="*{name}">提交信息不符合规则</p>
+               </div>
+                /*/-->
                 <div class="ui right aligned container">
                    <button type="button" class="ui button" onclick="window.history.go(-1)">返回</button>
-                   <button class="ui teal sumbit button">提交</button>
+                   <button class="ui teal submit button">提交</button>
                </div>
-               <div class="ui error message"></div>
            </form>
        </div>
 
@@ -107,13 +116,14 @@
         $('.ui.dropdown').dropdown({
             on : 'hover'
         });
-       $('.ui.form').form({
+
+        $('.ui.form').form({
            fields : {
                title : {
-                   identifier : "title",
+                   identifier: 'name11',
                    rules : [{
                        type : 'empty',
-                       prompt : '标题：请输入标题内容'
+                       prompt : '请输入分类名称'
                    }]
                }
            }

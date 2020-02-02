@@ -33,4 +33,9 @@ public class TypeServiceImpl implements TypeService {
     public Page<Type> listType(Pageable pageable) {
         return typeRespository.findAll(pageable);
     }
+
+    @Override
+    public Type getTypeByName(String name) {
+        return typeRespository.findByName(name);
+    }
 }

@@ -43,6 +43,11 @@
     <!--content-->
     <div class="m-container m-padded-tb-large">
        <div class="ui container">
+           <div class="ui success message" th:unless="${#strings.isEmpty(message)}">
+             <i class="close icon"></i>
+             <div class="header">提示：</div>
+             <p th:text="${message}">恭喜，操作成功！</p>
+           </div>
             <table class="ui celled table">
                <thread>
                    <th></th>
@@ -62,9 +67,9 @@
                </tbody>
                <tfoot>
                <th colspan="6">
-                   <div class="ui mini pagination menu">
-                       <a th:href="@{/admin/types(page=${page.number-1})}" href="#" class="item">上一页</a>
-                       <a th:href="@{/admin/types(page=${page.number+ 1})}" href="#" class="item">下一页</a>
+                   <div class="ui mini pagination menu" th:if="${page.totalPages}>1">
+                       <a th:href="@{/admin/types(page=${page.number-1})}" href="#" class="item" th:unless="${page.first}">上一页</a>
+                       <a th:href="@{/admin/types(page=${page.number+ 1})}" href="#" class="item" th:unless="${page.last}">下一页</a>
                    </div>
                    <a href="#" th:href="@{/admin/types/input}" class="ui right floated teal basic button">新增 </a>
                </th>
@@ -108,8 +113,8 @@
         </div> 
     </footer>
     <!--/*/ <th:block th:replace="_fragments :: script">/*/-->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="../static//js/jquery.min.js"></script>
+    <script src="../static/lib/semantic/semantic.min.js"></script>
     <!--/*/</th:block>/*/-->
     <script>
 
@@ -119,6 +124,10 @@
         });
         $('.ui.dropdown').dropdown({
             on : 'hover'
+        });
+        //消息提示款关闭
+        $('.message .close').on('click',function () {
+            $(this).closest('.message').transition('fade');
         });
     </script>
 </body>

@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class TypeController {
     TypeService typeService;
 
     @GetMapping("/types")
-    public String types(@PageableDefault(size = 10,sort = {"id"},direction = Sort.Direction.DESC) Pageable pageable, Model model){
+    public String types(@PageableDefault(size = 3,sort = {"id"},direction = Sort.Direction.DESC) Pageable pageable, Model model){
         model.addAttribute("page",typeService.listType(pageable));
         return "/admin/types";
     }
@@ -32,12 +33,12 @@ public class TypeController {
     }
 
     @PostMapping("types")
-    public String types(Type type){
+    public String types(Type type, RedirectAttributes redirectAttributes){
         Type t = typeService.saveType(type);
         if (t == null){
-
+            redirectAttributes.addFlashAttribute("message","操作失败！");
         }else{
-
+            redirectAttributes.addFlashAttribute("message","操作成功！");
         }
         return "redirect:/admin/types";
     }

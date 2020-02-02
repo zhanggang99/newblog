@@ -43,7 +43,7 @@
     <!--content-->
     <div class="m-container m-padded-tb-large">
        <div class="ui container">
-           <form action="#" method="post" class="ui form">
+           <form action="#" method="post" th:action="@{/admin/types}" class="ui form">
                <div class="field">
                    <div class="ui left labeld input">
                        <label class="ui teal basic label">名称</label>
@@ -52,7 +52,7 @@
                </div>
                 <div class="ui right aligned container">
                    <button type="button" class="ui button" onclick="window.history.go(-1)">返回</button>
-                   <button class="ui teal button">提交</button>
+                   <button class="ui teal sumbit button">提交</button>
                </div>
                <div class="ui error message"></div>
            </form>
@@ -96,10 +96,9 @@
     </footer>
 
     <!--/*/ <th:block th:replace="_fragments :: script">/*/-->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/lib/semantic/semantic.min.js"></script>
     <!--/*/</th:block>/*/-->
-
     <script>
 
         $('.menu.toggle').click(function(){

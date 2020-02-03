@@ -7,9 +7,11 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -36,7 +38,12 @@ public class TypeController {
         return "/admin/typeinput";
     }
 
-    @PostMapping("types")
+    @GetMapping("/types/{id}/input")
+    public String editinput(@PathVariable Long id, Model model){
+        model.addAttribute("type",typeService.getType(id));
+        return "/admin/typeinput";
+    }
+    @PostMapping("/types")
     public String types(@Valid Type type, BindingResult bindingResult, RedirectAttributes redirectAttributes){
         Type tt = typeService.getTypeByName(type.getName());
         if (tt != null){
@@ -47,10 +54,35 @@ public class TypeController {
         }
         Type t = typeService.saveType(type);
         if (t == null){
-            redirectAttributes.addFlashAttribute("message","操作失败！");
+            redirectAttributes.addFlashAttribute("message","新增失败！");
         }else{
-            redirectAttributes.addFlashAttribute("message","操作成功！");
+            redirectAttributes.addFlashAttribute("message","新增成功！");
         }
+        return "redirect:/admin/types";
+    }
+    @PostMapping("/types/{id}")
+    public String editpost(@Valid Type type, BindingResult bindingResult,@PathVariable Long id, RedirectAttributes redirectAttributes){
+        Type type1 = typeService.getTypeByName(type.getName());
+        if (type1 != null){
+            bindingResult.rejectValue("name","nameError","不能添加重复的分类！");
+        }
+        if (bindingResult.hasErrors()){
+            return "admin/typeinput";
+        }
+        Type t = typeService.updateType(id,type);
+        if (t == null){
+            redirectAttributes.addFlashAttribute("message","更新失败！");
+        }else{
+            redirectAttributes.addFlashAttribute("message","更新成功！");
+        }
+        return "redirect:/admin/types";
+    }
+
+    @GetMapping("/types/{id}/delete")
+    @Transactional
+    public String delete(@PathVariable Long id,RedirectAttributes redirectAttributes){
+        typeService.deleteType(id);
+        redirectAttributes.addFlashAttribute("message","删除成功");
         return "redirect:/admin/types";
     }
 }

@@ -1,7 +1,9 @@
 package com.zhanggang.blog.service;
 
+import com.zhanggang.blog.NotFoundException;
 import com.zhanggang.blog.dao.TypeRespository;
 import com.zhanggang.blog.po.Type;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -37,5 +39,21 @@ public class TypeServiceImpl implements TypeService {
     @Override
     public Type getTypeByName(String name) {
         return typeRespository.findByName(name);
+    }
+
+    @Override
+    public void deleteType(Long id) {
+        typeRespository.deleteById(id);
+    }
+
+    @Override
+    @Transactional
+    public Type updateType(Long id, Type type) {
+        Type t = typeRespository.getOne(id);
+        if (t == null){
+            throw  new NotFoundException("不存在此类型");
+        }
+        BeanUtils.copyProperties(type,t);
+        return typeRespository.save(t);
     }
 }

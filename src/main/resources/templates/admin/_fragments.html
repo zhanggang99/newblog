@@ -24,7 +24,7 @@
             <div class="right m-item m-mobile-hide menu">
                 <div class="ui dropdown item">
                     <div class="text">
-                        <img src="/images/weichat.png" alt="" class="ui avatar image">张刚
+                        <img src="/images/weichat.png" alt="" th:src="@{${session.user.avatar}}" class="ui avatar image"><span th:text="${session.user.nickname}">张刚</span>
                     </div>
                     <i class="dropdown icon"></i>
                     <div class="menu">

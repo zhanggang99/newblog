@@ -47,6 +47,11 @@ public class TypeServiceImpl implements TypeService {
     }
 
     @Override
+    public List<Type> listType() {
+        return typeRespository.findAll();
+    }
+
+    @Override
     @Transactional
     public Type updateType(Long id, Type type) {
         Type t = typeRespository.getOne(id);

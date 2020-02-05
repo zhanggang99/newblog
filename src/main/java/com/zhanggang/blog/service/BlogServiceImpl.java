@@ -4,6 +4,7 @@ import com.zhanggang.blog.NotFoundException;
 import com.zhanggang.blog.dao.BlogRespository;
 import com.zhanggang.blog.po.Blog;
 import com.zhanggang.blog.po.Type;
+import com.zhanggang.blog.vo.BlogQuery;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -36,7 +37,7 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public Page<Blog> listBlog(Pageable pageable, Blog blog) {
+    public Page<Blog> listBlog(Pageable pageable, BlogQuery blog) {
         return blogRespository.findAll(new Specification<Blog>() {
             @Override
             public Predicate toPredicate(Root<Blog> root, CriteriaQuery<?> cq, CriteriaBuilder cb) {
@@ -44,9 +45,11 @@ public class BlogServiceImpl implements BlogService {
                 if(!"".equals(blog.getTitle()) && blog.getTitle() != null){
                     predicateList.add(cb.like(root.<String>get("title"),"%"+blog.getTitle()+"%"));
                 }
-                if (blog.getType().getId() != null){
-                    predicateList.add(cb.equal(root.<Type>get("type").get("id"),blog.getType().getId()));
+                //if (blog.getType().getId() != null){
+                if (blog.getTypeId() != null){
+                    predicateList.add(cb.equal(root.<Type>get("type").get("id"),blog.getTypeId()));
                 }
+                //if (blog.isRecommend()){
                 if (blog.isRecommend()){
                     predicateList.add(cb.equal(root.<Boolean>get("recommand"),blog.isRecommend()));
                 }

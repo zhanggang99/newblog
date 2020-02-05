@@ -56,8 +56,8 @@
                            <i class="dropdown icon "></i>
                             <div class="default text">分类</div>
                            <div class="menu">
-                               <div class="item" data-value="1">开发日志</div>
-                               <div class="item" data-value="2">程序人生</div>
+                               <div th:each ="type : ${types}" class="item" data-value="1" th:data-value="${type.id}" th:text="${type.name}">开发日志</div>
+<!--                               <div class="item" data-value="2">程序人生</div>-->
                            </div>
                        </div>
                    </div>
@@ -111,7 +111,7 @@
        </div>
     </div>
     <!--footer-->
-    <footer th:replace="_fragments :: footer"  class="ui inverted vertical segment m-padded-tb-massive">
+    <footer th:replace="admin/_fragments :: footer"  class="ui inverted vertical segment m-padded-tb-massive">
         <div class="ui center aligned container">
             <div class="ui divided inverted stackable grid">
                 <div class="three wide column">

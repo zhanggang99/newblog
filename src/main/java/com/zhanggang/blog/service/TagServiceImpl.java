@@ -8,9 +8,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class TagServiceImpl implements TagService {
+
+    @Override
+    public List<Tag> listTag(String ids) {
+        return tagRespository.findAllById(convertToList(ids));
+    }
+
+    @Override
+    public List<Tag> listTag() {
+        return tagRespository.findAll();
+    }
 
     @Autowired
     TagRespository tagRespository;
@@ -47,5 +61,16 @@ public class TagServiceImpl implements TagService {
     @Override
     public Tag getTagByName(String name) {
         return tagRespository.getTagByName(name);
+    }
+
+    private List<Long> convertToList(String ids){
+        List<Long> list = new ArrayList<>();
+        if (!"".equals(ids) && ids != null){
+            String[] idList = ids.split(",");
+            for (int i = 0;i<idList.length;i++){
+                list.add( new Long(idList[i]));
+            }
+        }
+        return list;
     }
 }

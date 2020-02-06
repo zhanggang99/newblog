@@ -89,6 +89,7 @@
                        <td th:text="${blog.title}">这是我的博客标题</td>
                        <td th:text="${blog.type.name}">开发日志</td>
                        <td th:text="${blog.recommend ? '是' : '否'}">是</td>
+                       <td th:text="${blog.published ? '发布' : '草稿'}">草稿</td>
                        <td th:text="${blog.updateTime}">2020-01-01</td>
                        <td>
                            <a href="#" th:href="@{/admin/blogs/{id}/input(id=${blog.id})}" class="ui mini teal basic button">编辑</a>
@@ -97,7 +98,7 @@
                    </tr>
                    </tbody>
                    <tfoot>
-                   <th colspan="6">
+                   <th colspan="7">
                        <div class="ui mini pagination menu" th:if="${page.totalPages}>1">
                            <a onclick="page(this)" th:attr="data-page=${page.number-1" href="#" class="item" th:unless="${page.first}">上一页</a>
                            <a onclick="page(this)" th:attr="data-page=${page.number+1" href="#" class="item" th:unless="${page.last}">下一页</a>
@@ -106,6 +107,11 @@
                    </th>
                    </tfoot>
                </table>
+               <div class="ui success message" th:unless="${#strings.isEmpty(message)}">
+                   <i class="close icon"></i>
+                   <div class="header">提示：</div>
+                   <p th:text="${message}">恭喜：操作成功！</p>
+               </div>
            </div>
 
        </div>
@@ -150,7 +156,9 @@
 
     <script>
 
-
+        $('.message .close').click(function () {
+            $(this).closest('.message').transition('fade');
+        });
         $('.menu.toggle').click(function(){
             $('.m-item').toggleClass('m-mobile-hide'); 
         });

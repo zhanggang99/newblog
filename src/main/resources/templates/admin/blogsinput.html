@@ -75,8 +75,8 @@
                             <i class="dropdown icon"></i>
                             <div class="default text">分类</div>
                             <div class="menu">
-                                <div class="item" data-value="1">报错日志</div>
-                                <div class="item" data-value="2">开发日志</div>
+                                <div th:each = "type : ${types}" class="item" data-value="1" th:data-value="${type.id}" th:text="${type.name}">报错日志</div>
+<!--                                <div class="item" data-value="2">开发日志</div>-->
                             </div>
                         </div>
                     </div>
@@ -89,8 +89,8 @@
                                <i class="dropdown icon"></i>
                                <div class="default text">标签</div>
                                <div class="menu">
-                                   <div class="item" data-value="1">报错日志</div>
-                                   <div class="item" data-value="2">开发日志</div>
+                                   <div th:each="tag : ${tags}" th:data-value="${tag.id}" th:text="${tag.name}" class="item" data-value="1">报错日志</div>
+<!--                                   <div class="item" data-value="2">开发日志</div>-->
                                </div>
                            </div>
                        </div>
@@ -182,7 +182,7 @@
         $('.ui.dropdown').dropdown({
             on : 'hover'
         });
-        $("#save_btn").click(function(){
+        $("#save-btn").click(function(){
             $('[name="published"]').val(false);
             $('#blog-form').submit();
         });

@@ -1,5 +1,7 @@
 package com.zhanggang.blog.po;
 
+import org.thymeleaf.expression.Ids;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -191,6 +193,26 @@ public class Blog {
         this.comments = comments;
     }
 
+    public void init(){
+        this.tagIds = tagsToIds(this.getTags());
+    }
+    public String tagsToIds(List<Tag> tags){
+        if (!tags.isEmpty()){
+            StringBuffer sb = new StringBuffer();
+            boolean flag = false;
+            for (Tag tag : tags){
+                if (flag){
+                    sb.append(",");
+                }else{
+                    flag=true;
+                }
+                sb.append(tag.getId());
+            }
+            return sb.toString();
+        }else{
+            return tagIds;
+        }
+    }
     @Override
     public String toString() {
         return "Blog{" +

@@ -33,10 +33,10 @@ public class BlogController {
         model.addAttribute("page",blogService.listBlog(pageable,blog));
         return "admin/blogs :: blogList";
     }
-//    @GetMapping("/admin/blogsinput")
-//    public String bloginput(){
-//        return "admin/blogsinput";
-//    }
+    @GetMapping("/blogs/input")
+    public String bloginput(){
+        return "admin/blogsinput";
+    }
 
 //    @GetMapping("/admin/login")
 //    public String login(){

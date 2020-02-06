@@ -51,14 +51,17 @@
                        <input type="text" name="title" placeholder="标题">
                    </div>
                    <div class="field">
-                       <div class="ui selection dropdown">
-                           <input type="hidden" name="typeId" >
-                           <i class="dropdown icon "></i>
-                            <div class="default text">分类</div>
-                           <div class="menu">
-                               <div th:each ="type : ${types}" class="item" data-value="1" th:data-value="${type.id}" th:text="${type.name}">开发日志</div>
-<!--                               <div class="item" data-value="2">程序人生</div>-->
+                       <div class="ui labeled action input">
+                           <div class="ui type selection dropdown">
+                               <input type="hidden" name="typeId" >
+                               <i class="dropdown icon "></i>
+                               <div class="default text">分类</div>
+                               <div class="menu">
+                                   <div th:each ="type : ${types}" class="item" data-value="1" th:data-value="${type.id}" th:text="${type.name}">开发日志</div>
+                                   <!--                               <div class="item" data-value="2">程序人生</div>-->
+                               </div>
                            </div>
+                           <div id="clear-btn" class="ui compact button">clear</div>
                        </div>
                    </div>
                    <div class="field">
@@ -165,11 +168,15 @@
         $('.ui.dropdown').dropdown({
             on : 'hover'
         });
+        $('#clear-btn').click(function () {
+            $('.ui.type.dropdown').dropdown('clear');
+        });
         function page(obj) {
             $("[name='page']").val($(obj).data("page"));
             loaddata();
         }
         $('#search-btn').click(function () {
+            $("[name='page'").val(0);
             loaddata();
         });
         function loaddata() {

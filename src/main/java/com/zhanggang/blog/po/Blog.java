@@ -18,6 +18,7 @@ public class Blog {
     @Basic(fetch = FetchType.LAZY)
     @Lob
     private String content;
+    private String desciption;
     private String firstPicture;
     private String flag;
     private Integer views;
@@ -184,6 +185,16 @@ public class Blog {
     public void setUser(User user) {
         this.user = user;
     }
+
+
+    public String getDesciption() {
+        return desciption;
+    }
+
+    public void setDesciption(String desciption) {
+        this.desciption = desciption;
+    }
+
 
     public List<Comment> getComments() {
         return comments;

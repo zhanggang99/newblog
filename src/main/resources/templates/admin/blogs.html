@@ -104,8 +104,8 @@
                    <tfoot>
                    <th colspan="7">
                        <div class="ui mini pagination menu" th:if="${page.totalPages}>1">
-                           <a onclick="page(this)" th:attr="data-page=${page.number-1" href="#" class="item" th:unless="${page.first}">上一页</a>
-                           <a onclick="page(this)" th:attr="data-page=${page.number+1" href="#" class="item" th:unless="${page.last}">下一页</a>
+                           <a onclick="page(this)" th:attr="data-page=${page.number-1}" href="#" class="item" th:unless="${page.first}">上一页</a>
+                           <a onclick="page(this)" th:attr="data-page=${page.number+1}" href="#" class="item" th:unless="${page.last}">下一页</a>
                        </div>
                        <a href="#" th:href="@{/admin/blogs/input}" class="ui right floated teal basic button">新增 </a>
                    </th>
@@ -177,7 +177,7 @@
             loaddata();
         }
         $('#search-btn').click(function () {
-            $("[name='page'").val(0);
+            $("[name='page']").val(0);
             loaddata();
         });
         function loaddata() {

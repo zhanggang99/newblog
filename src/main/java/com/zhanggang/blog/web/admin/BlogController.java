@@ -65,8 +65,14 @@ public class BlogController {
         blog.setUser((User) session.getAttribute("user"));
         blog.setType(typeService.getType(blog.getType().getId()));
         blog.setTags(tagService.listTag(blog.getTagIds()));
-        Blog blog1 = blogService.saveBlog(blog);
-        if (blog1 == null){
+        //todo:添加博客时，可以添加新标签，对于新标签要添加到 t_tag 表中。
+        Blog b;
+        if (blog.getId() == null){
+            b = blogService.saveBlog(blog);
+        }else{
+            b=blogService.updateBlog(blog.getId(),blog);
+        }
+        if (b == null){
             redirectAttributes.addFlashAttribute("message","博客添加失败！");
         }else {
             redirectAttributes.addFlashAttribute("message","博客添加成功！");
@@ -79,4 +85,10 @@ public class BlogController {
 
     }
 
+    @GetMapping("/blogs/{id}/delete")
+    public String delete(@PathVariable Long id,RedirectAttributes redirectAttributes){
+        redirectAttributes.addFlashAttribute("message","删除成功！");
+        blogService.deleteBlog(id);
+        return REDIRECT_LIST;
+    }
 }

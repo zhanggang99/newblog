@@ -4,6 +4,7 @@ import com.zhanggang.blog.NotFoundException;
 import com.zhanggang.blog.dao.BlogRespository;
 import com.zhanggang.blog.po.Blog;
 import com.zhanggang.blog.po.Type;
+import com.zhanggang.blog.util.MyBeanUtils;
 import com.zhanggang.blog.vo.BlogQuery;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,7 +72,8 @@ public class BlogServiceImpl implements BlogService {
         if (blog1 == null){
             throw new NotFoundException("没有找到对应的博客!");
         }
-        BeanUtils.copyProperties(blog,blog1);
+        BeanUtils.copyProperties(blog,blog1, MyBeanUtils.getNullPropertyNames(blog));//过滤掉属性为空的 blog 属性。
+        blog1.setUpdateTime(new Date());
         return blogRespository.save(blog1);
     }
 

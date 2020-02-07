@@ -52,6 +52,11 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
+    public Page<Blog> listBlog(String query, Pageable pageable) {
+        return blogRespository.findByQuery(query,pageable);
+    }
+
+    @Override
     public Blog saveBlog(Blog blog) {
         if (blog.getId() == null){
             blog.setCreateTime(new Date());

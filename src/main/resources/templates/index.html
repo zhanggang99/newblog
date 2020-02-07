@@ -42,69 +42,39 @@
                                 <div class="ui teal header">博客</div>
                             </div>
                             <div class="right aligned column">
-                                共 <h3 class="ui orange header m-inline-block">14</h3> 篇
+                                共 <h3 class="ui orange header m-inline-block" th:text="${page.totalElements}">14</h3> 篇
                             </div>
                         </div>
                     </div>
                     <!--body-content-->
                     <div class="ui attached segment">
-                        <div class="ui padded vertical segment m-padded-tb-large">
+                        <div class="ui padded vertical segment m-padded-tb-large" th:each="blog : ${page.content}">
                             <div class="ui mobile reversed stackable grid">
                                 <div class="eleven wide column">
-                                    <h3 class="ui header">你真的理解我吗</h3>
-                                    <p class="m-text">我是张刚,学习前端框架无非是学习其各个组件，我们先从按钮开始。.学习前端框架无非是学习其各个组件，我们先从按钮开始。学习前端框架无非是学习其各个组件，我们先从按钮开始...</p>
+                                    <h3 class="ui header"><a class="m-black" href="#" target="_blank" th:href="@{/blog/{id}(id=${blog.id})}" th:text="${blog.title}">你真的理解我吗</a></h3>
+                                    <p class="m-text"  th:text="|${blog.desciption}...|">我是张刚,学习前端框架无非是学习其各个组件，我们先从按钮开始。.学习前端框架无非是学习其各个组件，我们先从按钮开始。学习前端框架无非是学习其各个组件，我们先从按钮开始...</p>
                                     <div class="ui grid">
                                         <div class=" eleven wide column">
                                             <div class="ui mini horizontal link list">
                                                 <div class="item">
-                                                    <img src="https://i.picsum.photos/id/87/100/100.jpg" alt="" class="ui avatar image">
-                                                    <div class="content"><a href="#" class="header">张刚</a></div>
+                                                    <img src="https://i.picsum.photos/id/87/100/100.jpg" th:src="@{${blog.user.avatar}}" alt="" class="ui avatar image">
+                                                    <div class="content"><a href="#" class="header"  th:text="${blog.user.nickname}">张刚</a></div>
                                                 </div>
                                                 <div class="item">
-                                                    <i class="calendar icon"></i>2020.01.01
+                                                    <i class="calendar icon"></i><span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}">2020.01.01</span>
                                                 </div>
                                                 <div class="item">
-                                                    <i class="eye icon"></i>2488
+                                                    <i class="eye icon"></i><span th:text="${blog.views}">2488</span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="right aligned five wide column">
-                                            <a href="#" target="_blank" class="ui teal basic label m-padded-mini m-text-thin">认知升级</a>
+                                            <a href="#" target="_blank" class="ui teal basic label m-padded-mini m-text-thin" th:text="${blog.type.name}">认知升级</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="five wide column">
-                                    <a href="#" target="_blank"><img src="https://i.picsum.photos/id/87/200/150.jpg" alt="" class="ui rounded image"></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ui padded vertical segment m-padded-tb-large">
-                            <div class="ui mobile reversed stackable grid">
-                                <div class="eleven wide column">
-                                    <h3 class="ui header">你真的理解我吗</h3>
-                                    <p class="m-text">我是张刚,学习前端框架无非是学习其各个组件，我们先从按钮开始。.学习前端框架无非是学习其各个组件，我们先从按钮开始。学习前端框架无非是学习其各个组件，我们先从按钮开始...</p>
-                                    <div class="ui grid">
-                                        <div class=" eleven wide column">
-                                            <div class="ui mini horizontal link list">
-                                                <div class="item">
-                                                    <img src="https://i.picsum.photos/id/87/100/100.jpg" alt="" class="ui avatar image">
-                                                    <div class="content"><a href="#" class="header">张刚</a></div>
-                                                </div>
-                                                <div class="item">
-                                                    <i class="calendar icon"></i>2020.01.01
-                                                </div>
-                                                <div class="item">
-                                                    <i class="eye icon"></i>2488
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="right aligned five wide column">
-                                            <a href="#" target="_blank" class="ui teal basic label m-padded-mini m-text-thin">认知升级</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="five wide column">
-                                    <a href="#" target="_blank"><img src="https://i.picsum.photos/id/87/200/150.jpg" alt="" class="ui rounded image"></a>
+                                    <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank"><img src="https://i.picsum.photos/id/87/200/150.jpg" th:src="@{${blog.firstPicture}}" alt="" class="ui rounded image"></a>
                                 </div>
                             </div>
                         </div>

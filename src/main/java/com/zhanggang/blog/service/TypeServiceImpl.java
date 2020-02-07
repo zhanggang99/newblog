@@ -6,7 +6,9 @@ import com.zhanggang.blog.po.Type;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -44,6 +46,26 @@ public class TypeServiceImpl implements TypeService {
     @Override
     public void deleteType(Long id) {
         typeRespository.deleteById(id);
+    }
+
+    @Override
+    public List<Type> listTypeTop(Integer size) {
+
+//        Sort sort = new Sort(
+//                new Sort.Order(Sort.Direction.ASC, Constants.PARAM_CREATED_DATE)
+//        );
+//        PageRequest pageable = new PageRequest(page, 20, sort);
+//        return new AsyncResult<>(threadRepository.findAll(pageable));
+        //Sort sort = new Sort(Sort.Direction.DESC,"blogs.size");
+
+//        Sort sort = new Sort(Sort.Direction.DESC,"blogs.size");
+//        Pageable pageable = new PageRequest(0,size,sort);
+//
+//        return typeRespository.findTop(pageable);
+
+        Sort.Order order=new Sort.Order(Sort.Direction.DESC, "blogs.size");
+        Pageable pageable = PageRequest.of(0,size,Sort.by(order));
+        return typeRespository.findTop(pageable);
     }
 
     @Override

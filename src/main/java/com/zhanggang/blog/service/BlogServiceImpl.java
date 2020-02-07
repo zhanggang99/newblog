@@ -9,7 +9,9 @@ import com.zhanggang.blog.vo.BlogQuery;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,6 +33,22 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public Blog getBlog(Long id) {
         return blogRespository.getOne(id);
+    }
+
+    @Override
+    public List<Blog> listRecommendBlogTop(Integer size) {
+        //Sort sort =  new Sort(Sort.Direction.DESC,"updateTime");
+        //Pageable pageable = new PageRequest(0,size,sort);
+        //Error:(40, 51) java: 不兼容的类型: java.lang.String无法转换为java.util.List<java.lang.String>
+        //Error:(41, 29) java: PageRequest(int,int,org.springframework.data.domain.Sort) 在 org.springframework.data.domain.PageRequest 中是 protected 访问控制
+        Sort.Order order = new Sort.Order(Sort.Direction.DESC,"updateTime");
+        Pageable pageable = PageRequest.of(0,size,Sort.by(order));
+        return blogRespository.findTop(pageable);
+    }
+
+    @Override
+    public Page<Blog> listBlog(Pageable pageable) {
+        return blogRespository.findAll(pageable);
     }
 
     @Override

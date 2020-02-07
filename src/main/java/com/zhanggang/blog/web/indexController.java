@@ -14,6 +14,6 @@ public class indexController {
 //            throw new NotFoundException("博客找不到");
 //        }
         System.out.println("------index-------");
-        return "blog";
+        return "index";
     }
 }

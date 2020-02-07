@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head th:replace="${_fragments :: head(~{::title})}">
+<head th:replace="_fragments :: head(~{::title})">
     <meta charset="UTF-8">
     <meta name="viewport" content="width= device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -10,7 +10,7 @@
 </head>
 <body>
     <!--header-->
-    <nav th:replace="_fragments :: menu(1)" class="ui inverted attached segment m-padd-tb-mini m-shadow-small">
+    <nav th:replace="_fragments :: menu(1)" class="ui inverted attached segment m-padded-tb-mini-mini m-shadow-small">
         <div class="ui container">
             <div class="ui inverted secondary stackable menu">
                 <h2 class="ui teal header item">Blog</h2>
@@ -32,8 +32,8 @@
     <!--content-->
     <div class="m-container m-padded-tb-large">
         <!--body-header-->
-        <div class="ui container">
-            <div class="ui stackable grid">
+        <div class="ui stackable container">
+            <div class="ui middle aligned stackable grid">
                 <!--left list-->
                 <div class="eleven wide column">
                     <div class="ui top attached segment">
@@ -112,7 +112,7 @@
                             <div class="ui mobile reversed stackable grid">
                                 <div class="eleven wide column">
                                     <h3 class="ui header">你真的理解我吗</h3>
-                                    <p class="m-text">我是张刚,学习前端框架无非是学习其各个组件，我们先从按钮开始。.学习前端框架无非是学习其各个组件，我们先从按钮开始。学习前端框架无非是学习其各个组件，我们先从按钮开始...</p class="m-text">
+                                    <p class="m-text">我是张刚,学习前端框架无非是学习其各个组件，我们先从按钮开始。.学习前端框架无非是学习其各个组件，我们先从按钮开始。学习前端框架无非是学习其各个组件，我们先从按钮开始...</p>
                                     <div class="ui grid">
                                         <div class=" eleven wide column">
                                             <div class="ui mini horizontal link list">
@@ -140,7 +140,7 @@
                         </div>
                     </div>
                     <!--body-footer-->
-                    <div class="ui botton attached segment">
+                    <div class="ui bottom attached segment">
                         <div class="ui middle aligned two column grid">
                             <div class="column">
                                 <a href="#" class="ui mini teal basic button">上一页</a>

@@ -10,7 +10,11 @@ body{
 .m-padded{
     padding: 1em !important;
 }
-.m-padd-tb-mini{
+.m-padded-tb-mini-mini{
+    padding-top: 0.02em !important;
+    padding-bottom: 0.02em !important;
+}
+.m-padded-tb-mini{
     padding-top: 0.2em !important;
     padding-bottom: 0.2em !important;
 }

@@ -4,6 +4,7 @@ import com.zhanggang.blog.NotFoundException;
 import com.zhanggang.blog.dao.BlogRespository;
 import com.zhanggang.blog.po.Blog;
 import com.zhanggang.blog.po.Type;
+import com.zhanggang.blog.util.MarkdownUtils;
 import com.zhanggang.blog.util.MyBeanUtils;
 import com.zhanggang.blog.vo.BlogQuery;
 import org.springframework.beans.BeanUtils;
@@ -49,6 +50,20 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public Page<Blog> listBlog(Pageable pageable) {
         return blogRespository.findAll(pageable);
+    }
+
+    @Override
+    public Blog getAndConvert(Long id) {
+        Blog blog = blogRespository.getOne(id);
+        if (blog == null){
+            throw new NotFoundException("message:博客找不到!");
+        }
+        Blog b = new Blog();
+        BeanUtils.copyProperties(blog,b);
+
+        String content = b.getContent();
+        b.setContent(MarkdownUtils.markdownToHtmlExtensions(content));
+        return b;
     }
 
     @Override

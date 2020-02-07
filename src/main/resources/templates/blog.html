@@ -14,7 +14,7 @@
 </head>
 <body>
     <!--header-->
-    <nav th:replace="_fragments :: menu(2)" class="ui inverted attached segment m-padd-tb-mini m-shadow-small">
+    <nav th:replace="_fragments :: menu(2)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small">
         <div class="ui container">
             <div class="ui inverted secondary stackable menu">
                 <h2 class="ui teal header item">Blog</h2>
@@ -39,24 +39,24 @@
            <div class="ui top attached segment">
             <div class="ui horizontal link list">
                 <div class="item">
-                    <img src="blog.html" alt="" class="ui avatar image">
-                    <div class="content"><a href="#" class="header">张刚</a></div>
+                    <img src="#" alt="" th:src="@{${blog.user.avatar}}" class="ui avatar image">
+                    <div class="content"><a href="#" class="header" th:text="${blog.user.nickname}">张刚</a></div>
                 </div>
                 <div class="item">
-                    <i class="calendar icon"></i>2020.01.01
+                    <i class="calendar icon"></i><span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}">2020.01.01</span>
                 </div>
                 <div class="item">
-                    <i class="eye icon"></i>2488
+                    <i class="eye icon"></i><span th:text="${blog.views}">33</span>
                 </div>
             </div>
            </div>
            <div class="ui attached segment">
-               <img src="https://i.picsum.photos/id/87/100/100.jpg" width="100%" height="200px" alt="" class="ui rounded image">
+               <img src="https://i.picsum.photos/id/87/100/100.jpg" th:src="@{${blog.firstPicture}}" width="100%" height="200px" alt="" class="ui rounded image">
            </div>
            <div class="ui attached padded segment">
-               <div class="ui right aligned basic segment"><div class="ui orange basic label">原创</div></div>
-               <div class="ui center aligned header">关于刻意练习的清单</div>
-               <div id="content" class="typo typo-selection js-toc-content m-padded-lr-responsive m-padded-tb-large">
+               <div class="ui right aligned basic segment"><div class="ui orange basic label" th:text="${blog.flag}">原创</div></div>
+               <div class="ui center aligned header" th:text="${blog.title}">关于刻意练习的清单</div>
+               <div id="content" class="typo typo-selection js-toc-content m-padded-lr-responsive m-padded-tb-large" th:text="${blog.content}">
                    <h1>中文网页重设与排版：<i class="serif">Typo.css</i></h1><br/>
 
                    <h2 id="tagline" class="serif">一致化浏览器排版效果，构建最适合中文阅读的网页排版</h2>
@@ -474,17 +474,17 @@ h5,h6{font-size:1em;}
                 
                 <p>所以呢，不要认为自己没有天赋，也不要迷信“21天速成”。任何技能只要你掌握正确有效的学习方法，你都可以学得会。你要相信万事背后必有道理，任何事情都有方法，也许只是你暂时没有找到而已。</P>
                </div>
-               <div class="m-padded-lr-responsive"><div class="ui basic teal left pointing label">方法轮</div></div>
+               <div class="m-padded-lr-responsive"><div class="ui basic teal left pointing label" th:each="tag : ${blog.tags}" th:text="${tag.name}">方法轮</div></div>
                <div class="ui center aligned basic segment"><div id="payButton" class="ui orange basic circular button">赞赏</div></div>
                <div class="ui payQR flowing popup transition hidden">
                 <div class="ui orange basic label">
                     <div class="ui images" style="font-size: inherit !important;">
                         <div class="image">
-                            <img src="./images/weichat.png" alt="" class="ui rounded bordered image" style="width: 120px ;">
+                            <img src="./images/weichat.png" th:src="@{/images/weichat.png}" alt="" class="ui rounded bordered image" style="width: 120px ;">
                             <div>支付宝</div>
                         </div>
                         <div class="image">
-                         <img src="./images/weichat.png" alt="" class="ui rounded bordered image" style="width: 120px ;">
+                         <img src="./images/weichat.png" th:src="@{/images/weichat.png}" alt="" class="ui rounded bordered image" style="width: 120px ;">
                          <div>微信</div>
                      </div>
                     </div>
@@ -495,8 +495,8 @@ h5,h6{font-size:1em;}
                <div class="ui middle aligned grid">
                    <div class="eleven wide column">
                        <ui class="list">
-                           <li>作者：张刚</li>
-                           <li>发表时间：2020.01.01</li>
+                           <li>作者：<span th:text="${blog.user.nickname}">张刚</span><a href="about.html" th:href="@{/about}" target="_blank">(联系作者)</a></li>
+                           <li>发表时间：<span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd HH:mm')}">2020.01.01</span></li>
                            <li>声明：自由转载-非商业-保持署名</li>
                            <li>公从号转载：请添加作者公众号维码</li>
                        </ui>

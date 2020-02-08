@@ -11,10 +11,10 @@ public class Comment {
     @Id
     @GeneratedValue
     private Long id;
-    private String nickName;
+    private String nickname;
     private String email;
     private String content;
-    private String avater;
+    private String avatar;
     @Temporal(TemporalType.TIMESTAMP)
     private Date createTime;
 
@@ -37,13 +37,6 @@ public class Comment {
         this.id = id;
     }
 
-    public String getNickName() {
-        return nickName;
-    }
-
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
-    }
 
     public String getEmail() {
         return email;
@@ -61,12 +54,12 @@ public class Comment {
         this.content = content;
     }
 
-    public String getAvater() {
-        return avater;
+    public String getAvatar() {
+        return avatar;
     }
 
-    public void setAvater(String avater) {
-        this.avater = avater;
+    public void setAvatar(String avater) {
+        this.avatar = avater;
     }
 
     public Date getCreateTime() {
@@ -101,14 +94,22 @@ public class Comment {
         this.blog = blog;
     }
 
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
     @Override
     public String toString() {
         return "Comment{" +
                 "id=" + id +
-                ", nickName='" + nickName + '\'' +
+                ", nickname='" + nickname + '\'' +
                 ", email='" + email + '\'' +
                 ", content='" + content + '\'' +
-                ", avater='" + avater + '\'' +
+                ", avatar='" + avatar + '\'' +
                 ", createTime=" + createTime +
                 '}';
     }

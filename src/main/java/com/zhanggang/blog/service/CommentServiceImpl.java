@@ -22,7 +22,7 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public List<Comment> listCommentByBlogId(Long blogId) {
 //        Sort sort = new Sort(Sort.Direction.DESC,"createTime");
-        Sort.Order order = new Sort.Order(Sort.Direction.DESC,"createTime");
+        Sort.Order order = new Sort.Order(Sort.Direction.ASC,"createTime");
         List<Comment> comments = commentRespository.findByBlogIdAndParentCommentNull(blogId, Sort.by(order));
         return eachComment(comments);
     }

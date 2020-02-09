@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="">
-<head>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="_fragments :: head(~{::title})">
     <meta charset="UTF-8">
     <meta name="viewport" content="width= device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -10,7 +10,7 @@
 </head>
 <body>
     <!--header-->
-    <nav th:replace="_fragments :: menu(4) class="ui inverted attached segment m-padd-tb-mini m-shadow-small">
+    <nav th:replace="_fragments :: menu(2)" class="ui inverted attached segment m-padd-tb-mini m-shadow-small">
         <div class="ui container">
             <div class="ui inverted secondary stackable menu">
                 <h2 class="ui teal header item">Blog</h2>
@@ -190,7 +190,7 @@
 
     </div>
     <!--footer-->
-    <footer class="ui inverted vertical segment m-padded-tb-massive">
+    <footer th:replace="_fragments :: footer" class="ui inverted vertical segment m-padded-tb-massive">
         <div class="ui center aligned container">
             <div class="ui divided inverted stackable grid">
                 <div class="three wide column">
@@ -230,7 +230,6 @@
         $('.menu.toggle').click(function(){
             $('.m-item').toggleClass('m-mobile-hide'); 
         });
-       
     </script>
 </body>
 </html>

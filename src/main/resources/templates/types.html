@@ -52,7 +52,7 @@
              <!--contenet-->
             <div class="ui top attached teal segment">
                 <div class="ui padded vertical segment m-padded-tb-large m-mobile-lr-clear" th:each="blog : ${page.content}">
-               <div class="ui mobile reversed stackable grid">
+                <div class="ui mobile reversed stackable grid">
                    <div class="eleven wide column">
                        <h3 class="ui header"><a class="m-black" target="_blank" th:text="${blog.title}" href="#" th:href="@{/blog/{id}(id=${blog.id})}">你真的理解我吗</a></h3>
                        <p class="m-text" th:text="${blog.desciption}">我是张刚,学习前端框架无非是学习其各个组件，我们先从按钮开始。.学习前端框架无非是学习其各个组件，我们先从按钮开始。学习前端框架无非是学习其各个组件，我们先从按钮开始...</p>
@@ -73,7 +73,7 @@
                                    </div>
                                </div>
                                <div class="right aligned five wide column">
-                                   <a href="#" target="_blank" class="ui teal basic label m-padded-mini m-text-thin" th:text="${blog.type.name}">认知升级</a>
+                                   <a href="#" target="_blank" class="ui teal basic label m-padded-tiny m-text-thin" th:text="${blog.type.name}">认知升级</a>
                                </div>
                            </div>
                        </div>

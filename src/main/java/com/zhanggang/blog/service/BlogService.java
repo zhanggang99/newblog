@@ -13,6 +13,7 @@ public interface BlogService {
     Blog saveBlog(Blog blog);
     Page<Blog> listBlog(Pageable pageable);
     Page<Blog> listBlog(String query,Pageable pageable);
+    Page<Blog> listBlog(Long tagId,Pageable pageable);
     Page<Blog> listBlog(Pageable pageable, BlogQuery blog);
     Blog updateBlog(Long id,Blog blog);
     void deleteBlog(Long id);

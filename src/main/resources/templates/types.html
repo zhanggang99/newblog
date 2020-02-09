@@ -39,18 +39,14 @@
                   <div class="ui teal header">分类</div>
               </div>
               <div class="right aligned column">
-                  共 <h3 class="ui orange header m-inline-block">14</h3> 个
+                  共 <h3 class="ui orange header m-inline-block" th:text="${#arrays.length(types)}">14</h3> 个
               </div>
           </div>
       </div>
       <div class="ui attached segment">
-        <div class="ui labeled button m-margin-tb-tiny">
-          <a href="#" class="ui basic teal button">思考</a>
+        <div class="ui labeled button m-margin-tb-tiny" th:each="type : ${types}">
+          <a href="#" th:href="@{/types/{id}(id=${type.id})}" class="ui basic button" th:classappend="${type.id == activeTypeId} ? 'teal'" th:text="${type.name}">思考</a>
           <div class="ui basic teal left pointing label">24</div>
-        </div>
-        <div class="ui labeled button m-margin-tb-tiny">
-          <a href="#" class="ui basic button">思考</a>
-          <div class="ui basic  left pointing label">24</div>
         </div>
       </div>
       <!--contenet-->

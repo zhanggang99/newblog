@@ -504,7 +504,7 @@ h5,h6{font-size:1em;}
                    <div class="five wide column"><img src="./images/weichat.png" th:src="@{/images/weichat.png}" class="ui right floated rounded bordered image" style="width: 120px;"></img></div>
                </div>
            </div>
-           <div class="ui bottom attached segment">
+           <div class="ui bottom attached segment" th:if="${blog.commentabled}">
                <div id="comment-container" class="ui teal segment">
                    <div th:fragment="commentList">
                        <div class="ui threaded comments" style="max-width: 100%">

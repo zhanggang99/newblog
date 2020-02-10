@@ -475,23 +475,25 @@ h5,h6{font-size:1em;}
                 <p>所以呢，不要认为自己没有天赋，也不要迷信“21天速成”。任何技能只要你掌握正确有效的学习方法，你都可以学得会。你要相信万事背后必有道理，任何事情都有方法，也许只是你暂时没有找到而已。</P>
                </div>
                <div class="m-padded-lr-responsive"><div class="ui basic teal left pointing label" th:each="tag : ${blog.tags}" th:text="${tag.name}">方法轮</div></div>
-               <div class="ui center aligned basic segment"><div id="payButton" class="ui orange basic circular button">赞赏</div></div>
-               <div class="ui payQR flowing popup transition hidden">
-                <div class="ui orange basic label">
-                    <div class="ui images" style="font-size: inherit !important;">
-                        <div class="image">
-                            <img src="./images/weichat.png" th:src="@{/images/weichat.png}" alt="" class="ui rounded bordered image" style="width: 120px ;">
-                            <div>支付宝</div>
-                        </div>
-                        <div class="image">
-                         <img src="./images/weichat.png" th:src="@{/images/weichat.png}" alt="" class="ui rounded bordered image" style="width: 120px ;">
-                         <div>微信</div>
-                     </div>
-                    </div>
-                </div>
+               <div th:if="${blog.appreciation}">
+                   <div class="ui center aligned basic segment"><div id="payButton" class="ui orange basic circular button">赞赏</div></div>
+                   <div class="ui payQR flowing popup transition hidden">
+                       <div class="ui orange basic label">
+                           <div class="ui images" style="font-size: inherit !important;">
+                               <div class="image">
+                                   <img src="./images/weichat.png" th:src="@{/images/weichat.png}" alt="" class="ui rounded bordered image" style="width: 120px ;">
+                                   <div>支付宝</div>
+                               </div>
+                               <div class="image">
+                                   <img src="./images/weichat.png" th:src="@{/images/weichat.png}" alt="" class="ui rounded bordered image" style="width: 120px ;">
+                                   <div>微信</div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
                </div>
            </div>
-           <div class="ui attached positive message">
+           <div class="ui attached positive message" th:if="${blog.shareStatement}">
                <div class="ui middle aligned grid">
                    <div class="eleven wide column">
                        <ui class="list">

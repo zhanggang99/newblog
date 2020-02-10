@@ -39,41 +39,20 @@
                   <div class="ui teal header">归档</div>
               </div>
               <div class="right aligned column">
-                  共 <h3 class="ui orange header m-inline-block">14</h3> 篇博客
+                  共 <h3 class="ui orange header m-inline-block" th:text="${countBlog}">14</h3> 篇博客
               </div>
           </div>
         </div>
-      <!--contenet-->
-      <h3  class="ui center aligned header">2020</h3>
-      <div class="ui fluid vertical menu">
-          <a href="#" target="_black" class="item">
-            <span><i class="mini teal circle icon"></i>这是我的第一博客英语速记<div class="ui teal basic left pointing label m-padded-mini">09月20日</div></span>
-            <div class="ui orange basic left pointing label m-padded-mini">原创</div>
-         </a>
-         <a href="#" target="_black" class="item">
-            <span><i class="mini teal circle icon"></i>这是我的第一博客英语速记<div class="ui teal basic left pointing label m-padded-mini">09月20日</div></span>
-            <div class="ui orange basic left pointing label m-padded-mini">原创</div>
-         </a>
-         <a href="#" target="_black" class="item">
-            <span><i class="mini teal circle icon"></i>这是我的第一博客英语速记<div class="ui teal basic left pointing label m-padded-mini">09月20日</div></span>
-            <div class="ui orange basic left pointing label m-padded-mini">原创</div>
-         </a>
-      </div>
-      <h3  class="ui center aligned header">2019</h3>
-      <div class="ui fluid vertical menu">
-          <a href="#" target="_black" class="item">
-            <span><i class="mini teal circle icon"></i>这是我的第一博客英语速记<div class="ui teal basic left pointing label m-padded-mini">09月20日</div></span>
-            <div class="ui orange basic left pointing label m-padded-mini">原创</div>
-         </a>
-         <a href="#" target="_black" class="item">
-            <span><i class="mini teal circle icon"></i>这是我的第一博客英语速记<div class="ui teal basic left pointing label m-padded-mini">09月20日</div></span>
-            <div class="ui orange basic left pointing label m-padded-mini">原创</div>
-         </a>
-         <a href="#" target="_black" class="item">
-            <span><i class="mini teal circle icon"></i>这是我的第一博客英语速记<div class="ui teal basic left pointing label m-padded-mini">09月20日</div></span>
-            <div class="ui orange basic left pointing label m-padded-mini">原创</div>
-         </a>
-      </div>
+           <th:block th:each="item : ${mapBlogs}">
+               <!--contenet-->
+               <h3  class="ui center aligned header" th:text="${item.key}">2020</h3>
+               <div class="ui fluid vertical menu">
+                   <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_black" class="item" th:each="blog : ${item.value}">
+                       <span><i class="mini teal circle icon"></i><span th:text="${blog.title}">博客标题</span><div class="ui teal basic left pointing label m-padded-mini">09月20日</div></span>
+                       <div class="ui orange basic left pointing label m-padded-mini" th:text="${blog.flag}">原创</div>
+                   </a>
+               </div>
+           </th:block>
        </div>
 
     </div>
